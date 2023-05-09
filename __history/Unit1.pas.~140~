@@ -1,0 +1,261 @@
+unit Unit1;
+
+interface
+
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
+  FMX.Grid.Style, FMX.Grid, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Menus,
+  FMX.StdCtrls, FMX.Objects, FMX.Edit, FMX.Layouts;
+
+  procedure horizontal_win(i,j: integer);
+  procedure vertical_win(i,j: integer);
+  procedure diagonal_win_gauche(i,j: integer);
+  procedure diagonal_win_droite(i,j: integer);
+  procedure win;
+  procedure calcul_intermediaire (i: integer;var LColumn: Array of TControl);
+  procedure initialiser(LFlowLayout1: TFlowLayout) ;
+  procedure bouton_cliker ( var LColumn: Array  of TControl);
+  procedure bouton (a : integer ; var LColumn: Array  of TControl;LFlowLayout1: TFlowLayout);
+
+ Var
+    clicked,winner,isclicked: boolean;
+    compteur  : integer;
+    tab : Array [0..6] of Array [0..6] of  TControl;
+
+implementation
+
+
+
+
+procedure initialiser(LFlowLayout1: TFlowLayout) ;
+
+var
+  i,j : integer;
+begin
+  for i := 0 to 6 do
+    begin
+       for j := 0 to 6 do
+         tab[i][j] := LFlowLayout1.Controls[7*i+j];
+    end;
+
+  winner := False;
+  clicked := False;
+  isclicked := False;
+  compteur := 0;
+
+
+end;
+
+procedure diagonal_win_gauche(i,j: integer);
+begin
+   if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+1][j+1]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+2][j+2]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+3][j+3]).Fill.Color=TAlphacolorrec.green))or
+            ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+1][j+1]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+2][j+2]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+3][j+3]).Fill.Color=TAlphacolorrec.blue)) then
+
+                begin
+                    winner := True;
+                end
+end;
+
+procedure diagonal_win_droite(i,j: integer);
+begin
+   if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+1][j-1]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+2][j-2]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+3][j-3]).Fill.Color=TAlphacolorrec.green))or
+            ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+1][j-1]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+2][j-2]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+3][j-3]).Fill.Color=TAlphacolorrec.blue)) then
+
+                begin
+                    winner := True;
+                end
+end;
+procedure vertical_win(i,j: integer);
+begin
+   if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+1][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+2][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i+3][j]).Fill.Color=TAlphacolorrec.green))or
+           ( (Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+1][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+2][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i+3][j]).Fill.Color=TAlphacolorrec.blue)) then
+
+                begin
+                    winner := True;
+                end
+end;
+procedure horizontal_win(i,j: integer);
+
+begin
+  if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i][j+1]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i][j+2]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(tab[i][j+3]).Fill.Color=TAlphacolorrec.green) ) or
+            ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i][j+1]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i][j+2]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(tab[i][j+3]).Fill.Color=TAlphacolorrec.blue) )then
+
+      begin
+       winner := True;
+                end
+end;
+
+procedure win;
+ var
+i,j: integer;
+begin
+  for i := 0 to 6 do
+    begin
+      for j := 0 to 3 do
+         begin
+           horizontal_win(i,j);
+           if winner = True then
+              break;
+         end;
+        if winner = True then
+          break;
+    end;
+
+
+
+    for i := 0 to 3 do
+    begin
+      for j := 0 to 6 do
+         begin
+           vertical_win(i,j);
+           if winner = True then
+              break;
+         end;
+         if winner = True then
+          break;
+    end;
+
+    for i := 0 to 3 do
+      begin
+        for j := 0 to 3 do
+          begin
+            diagonal_win_gauche(i,j);
+            if winner = True then
+              break;
+          end;
+          if winner = True then
+              break;
+
+      end;
+
+
+     for i := 0 to 3 do
+      begin
+        for j := 3 to 6 do
+          begin
+            diagonal_win_droite(i,j);
+            if winner = True then
+              break;
+          end;
+          if winner = True then
+              break;
+
+      end;
+
+
+end;
+procedure calcul_intermediaire (i: integer;var LColumn: Array of TControl);
+begin
+     if clicked = False  then
+          begin
+            win;
+            Trectangle(LColumn[i]).Fill.color := TAlphacolorrec.blue;
+            clicked := True ;
+           compteur := compteur +1;
+           win;
+          end
+       else
+          begin
+           win;
+           Trectangle(LColumn[i]).Fill.color := TAlphacolorrec.green;
+           clicked := False;
+           compteur := compteur +1;
+           win;
+          end;
+end;
+
+
+procedure bouton_cliker ( var LColumn: Array of TControl);
+begin
+  if  (Trectangle(LColumn[6]).Fill.color <>  TAlphacolorrec.blue)
+    and (Trectangle(LColumn[6]).Fill.color <>  TAlphacolorrec.green)  then
+       calcul_intermediaire (6,LColumn)
+  else
+  begin
+     if  (Trectangle(LColumn[5]).Fill.color <>  TAlphacolorrec.blue)
+        and (Trectangle(LColumn[5]).Fill.color <>  TAlphacolorrec.green)  then
+           calcul_intermediaire (5,LColumn)
+     else
+      begin
+        if  (Trectangle(LColumn[4]).Fill.color <>  TAlphacolorrec.blue)
+          and (Trectangle(LColumn[4]).Fill.color <>  TAlphacolorrec.green)  then
+           calcul_intermediaire (4,LColumn)
+        else
+          begin
+            if  (Trectangle(LColumn[3]).Fill.color <>  TAlphacolorrec.blue)
+                and (Trectangle(LColumn[3]).Fill.color <>  TAlphacolorrec.green)  then
+                 calcul_intermediaire (3,LColumn)
+             else
+                begin
+                   if  (Trectangle(LColumn[2]).Fill.color <>  TAlphacolorrec.blue)
+                        and (Trectangle(LColumn[2]).Fill.color <>  TAlphacolorrec.green)  then
+                          calcul_intermediaire (2,LColumn)
+                    else
+                      begin
+                       if  (Trectangle(LColumn[1]).Fill.color <>  TAlphacolorrec.blue)
+                          and (Trectangle(LColumn[1]).Fill.color <>  TAlphacolorrec.green)  then
+                           calcul_intermediaire (1,LColumn)
+                        else
+                          begin
+                             if  (Trectangle(LColumn[0]).Fill.color <>  TAlphacolorrec.blue)
+                              and (Trectangle(LColumn[0]).Fill.color <>  TAlphacolorrec.green)  then
+                               calcul_intermediaire (0,LColumn)
+                          end;
+
+                      end;
+                end;
+          end;
+      end;
+
+  end;
+
+ end;
+
+
+
+
+
+procedure bouton (a : integer ; var LColumn: Array  of TControl;LFlowLayout1: TFlowLayout);
+
+var
+  i: integer;
+begin
+    for i := 0 to 6 do
+      begin
+        if i=0 then
+           LColumn[i] := LFlowLayout1.Controls[i+a]
+        else
+           LColumn[i] := LFlowLayout1.Controls[7*(i+a)-6*a];
+      end;
+    bouton_cliker (LColumn) ;
+
+end;
+
+
+end.

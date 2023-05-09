@@ -1,0 +1,614 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 646
+  ClientWidth = 653
+  Padding.Left = 200.000000000000000000
+  Padding.Top = 10.000000000000000000
+  Padding.Right = 200.000000000000000000
+  Padding.Bottom = 20.000000000000000000
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  ShowHint = False
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Scale
+    Position.X = 56.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 537.000000000000000000
+    Size.Height = 489.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 50
+    object FlowLayout1: TFlowLayout
+      Align = Scale
+      Position.X = 85.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 387.000000000000000000
+      Size.Height = 362.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 49
+      Justify = Justify
+      JustifyLastLine = Justify
+      FlowDirection = LeftToRight
+      HorizontalGap = 4.000000000000000000
+      VerticalGap = 1.000000000000000000
+      object Rectangle1: TRectangle
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle2: TRectangle
+        Position.X = 56.166667938232420000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle3: TRectangle
+        Position.X = 112.333335876464800000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle4: TRectangle
+        Position.X = 168.500000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle5: TRectangle
+        Position.X = 224.666671752929700000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle6: TRectangle
+        Position.X = 280.833343505859400000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle7: TRectangle
+        Position.X = 337.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle8: TRectangle
+        Position.Y = 51.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle9: TRectangle
+        Position.X = 56.166667938232420000
+        Position.Y = 51.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle10: TRectangle
+        Position.X = 112.333335876464800000
+        Position.Y = 51.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle11: TRectangle
+        Position.X = 168.500000000000000000
+        Position.Y = 51.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle12: TRectangle
+        Position.X = 224.666671752929700000
+        Position.Y = 51.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle13: TRectangle
+        Position.X = 280.833343505859400000
+        Position.Y = 51.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle14: TRectangle
+        Position.X = 337.000000000000000000
+        Position.Y = 51.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle15: TRectangle
+        Position.Y = 102.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle16: TRectangle
+        Position.X = 56.166667938232420000
+        Position.Y = 102.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle17: TRectangle
+        Align = Scale
+        Position.X = 112.333335876464800000
+        Position.Y = 102.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle18: TRectangle
+        Position.X = 168.500000000000000000
+        Position.Y = 102.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle19: TRectangle
+        Position.X = 224.666671752929700000
+        Position.Y = 102.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle20: TRectangle
+        Position.X = 280.833343505859400000
+        Position.Y = 102.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle21: TRectangle
+        Position.X = 337.000000000000000000
+        Position.Y = 102.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle22: TRectangle
+        Position.Y = 153.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle23: TRectangle
+        Position.X = 56.166667938232420000
+        Position.Y = 153.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle24: TRectangle
+        Position.X = 112.333335876464800000
+        Position.Y = 153.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle25: TRectangle
+        Position.X = 168.500000000000000000
+        Position.Y = 153.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle26: TRectangle
+        Position.X = 224.666671752929700000
+        Position.Y = 153.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle27: TRectangle
+        Position.X = 280.833343505859400000
+        Position.Y = 153.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle28: TRectangle
+        Position.X = 337.000000000000000000
+        Position.Y = 153.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle29: TRectangle
+        Position.Y = 204.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle30: TRectangle
+        Position.X = 56.166667938232420000
+        Position.Y = 204.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle31: TRectangle
+        Position.X = 112.333335876464800000
+        Position.Y = 204.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle32: TRectangle
+        Position.X = 168.500000000000000000
+        Position.Y = 204.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle33: TRectangle
+        Position.X = 224.666671752929700000
+        Position.Y = 204.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle34: TRectangle
+        Position.X = 280.833343505859400000
+        Position.Y = 204.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle35: TRectangle
+        Position.X = 337.000000000000000000
+        Position.Y = 204.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle36: TRectangle
+        Position.Y = 255.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle37: TRectangle
+        Position.X = 56.166667938232420000
+        Position.Y = 255.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle38: TRectangle
+        Position.X = 112.333335876464800000
+        Position.Y = 255.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle39: TRectangle
+        Position.X = 168.500000000000000000
+        Position.Y = 255.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle40: TRectangle
+        Position.X = 224.666671752929700000
+        Position.Y = 255.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle41: TRectangle
+        Position.X = 280.833343505859400000
+        Position.Y = 255.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle42: TRectangle
+        Position.X = 337.000000000000000000
+        Position.Y = 255.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle43: TRectangle
+        Position.Y = 306.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle44: TRectangle
+        Position.X = 56.166667938232420000
+        Position.Y = 306.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle45: TRectangle
+        Position.X = 112.333335876464800000
+        Position.Y = 306.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle46: TRectangle
+        Position.X = 168.500000000000000000
+        Position.Y = 306.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle47: TRectangle
+        Position.X = 224.666671752929700000
+        Position.Y = 306.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle48: TRectangle
+        Position.X = 280.833343505859400000
+        Position.Y = 306.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+      object Rectangle49: TRectangle
+        Position.X = 337.000000000000000000
+        Position.Y = 306.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        XRadius = 10.000000000000000000
+        YRadius = 10.000000000000000000
+      end
+    end
+    object Panel2: TPanel
+      Position.X = 80.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 50
+      object Button1: TButton
+        Align = Scale
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 3.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 55
+        Text = 'CLIC'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = Button1Click
+      end
+    end
+    object Panel3: TPanel
+      Position.X = 136.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 51
+      object Button2: TButton
+        Align = Scale
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 3.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 52
+        Text = 'CLIC'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = Button2Click
+      end
+    end
+    object Panel4: TPanel
+      Position.X = 192.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 52
+      object Button3: TButton
+        Align = Scale
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 3.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 50
+        Text = 'CLIC'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = Button3Click
+      end
+    end
+    object Panel5: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 53
+      object Button4: TButton
+        Align = Scale
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 3.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 53
+        Text = 'CLIC'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = Button4Click
+      end
+    end
+    object Panel6: TPanel
+      Position.X = 304.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 54
+      object Button5: TButton
+        Align = Scale
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 3.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 51
+        Text = 'CLIC'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = Button5Click
+      end
+    end
+    object Panel7: TPanel
+      Position.X = 360.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 55
+      object Button6: TButton
+        Align = Scale
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 3.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 49
+        Text = 'CLIC'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = Button6Click
+      end
+    end
+    object Panel8: TPanel
+      Position.X = 416.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 56
+      object Button7: TButton
+        Align = Scale
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 3.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 54
+        Text = 'CLIC'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = Button7Click
+      end
+    end
+  end
+end

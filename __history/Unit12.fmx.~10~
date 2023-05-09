@@ -1,0 +1,123 @@
+object Form12: TForm12
+  Left = 0
+  Top = 0
+  Caption = 'Form12'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Scale
+    TabOrder = 56
+    Text = '   Connect4 game'
+    TextSettings.Font.Family = 'Bodoni MT'
+    TextSettings.Font.Size = 40.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    Position.X = 192.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [FontColor]
+  end
+  object play: TButton
+    Position.X = 416.000000000000000000
+    Position.Y = 347.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 46.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 55
+    Text = 'Jouer'
+    OnClick = playClick
+  end
+  object Rectangle1: TRectangle
+    Align = Scale
+    Fill.Color = claWhite
+    Position.X = 4.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 629.000000000000000000
+    Size.Height = 97.000000000000000000
+    Size.PlatformDefault = False
+    object Rectangle2: TRectangle
+      Align = Scale
+      Fill.Color = claBisque
+      Position.X = 72.927536010742180000
+      Position.Y = 19.000000000000000000
+      Size.Width = 49.631240844726560000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 25.000000000000000000
+      YRadius = 25.000000000000000000
+    end
+    object Rectangle3: TRectangle
+      Align = Scale
+      Fill.Color = claAquamarine
+      Position.X = 145.855072021484400000
+      Position.Y = 16.000000000000000000
+      Size.Width = 49.631240844726560000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 24.500000000000000000
+      YRadius = 24.500000000000000000
+    end
+    object Rectangle4: TRectangle
+      Align = Scale
+      Fill.Color = claDeepskyblue
+      Position.X = 218.782608032226600000
+      Position.Y = 16.000000000000000000
+      Size.Width = 49.631240844726560000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 24.500000000000000000
+      YRadius = 24.500000000000000000
+    end
+    object Rectangle5: TRectangle
+      Align = Scale
+      Fill.Color = claYellow
+      Position.X = 291.710144042968800000
+      Position.Y = 16.000000000000000000
+      Size.Width = 49.631225585937500000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 24.500000000000000000
+      YRadius = 24.500000000000000000
+    end
+    object Rectangle6: TRectangle
+      Align = Scale
+      Fill.Color = claRed
+      Position.X = 364.637695312500000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 49.631225585937500000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 24.500000000000000000
+      YRadius = 24.500000000000000000
+    end
+    object Rectangle7: TRectangle
+      Align = Scale
+      Fill.Color = claBlue
+      Position.X = 437.565216064453100000
+      Position.Y = 16.000000000000000000
+      Size.Width = 49.631256103515620000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 24.500000000000000000
+      YRadius = 24.500000000000000000
+    end
+    object Rectangle8: TRectangle
+      Align = Scale
+      Fill.Color = claDarkgreen
+      Position.X = 510.492767333984400000
+      Position.Y = 16.000000000000000000
+      Size.Width = 49.631256103515620000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 24.500000000000000000
+      YRadius = 24.500000000000000000
+    end
+  end
+end

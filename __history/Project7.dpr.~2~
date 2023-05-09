@@ -1,0 +1,16 @@
+program Project7;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  Unit12 in '..\Delphi-Project1\Unit12.pas' {Form12},
+  Unit3 in 'Unit3.pas' {Form3};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm12, Form12);
+  Application.CreateForm(TForm3, Form3);
+  Application.Run;
+end.
