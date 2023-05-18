@@ -11,6 +11,7 @@ uses
   FMX.Controls3D, FMX.Objects3D;
 
 type
+
   TForm3 = class(TForm)
     Button1: TButton;
     Button2: TButton;
@@ -93,10 +94,9 @@ type
     { Déclarations privées }
   public
     { Déclarations publiques }
-   Column : Array [0..6] of TControl;
     procedure desactiver_bouton;
     procedure verification;
-    procedure fonction_des_boutons (r: integer);
+    procedure fonction_des_boutons (LColonne: integer);
   end;
 
 var
@@ -109,7 +109,7 @@ implementation
 
 procedure TForm3.desactiver_bouton;
 begin
-   Button1.Enabled := False;
+    Button1.Enabled := False;
     Button2.Enabled := False;
     Button3.Enabled := False;
     Button4.Enabled := False;
@@ -135,9 +135,9 @@ begin
             end;
 end;
 
-procedure TForm3.fonction_des_boutons (r: integer);
+procedure TForm3.fonction_des_boutons (LColonne: integer);
 begin
-  bouton (r,Column,FlowLayout1);
+  bouton_cliker (LColonne);
   verification;
 end;
 
@@ -147,43 +147,31 @@ begin
 end;
 
 procedure TForm3.Button2Click(Sender: TObject);
-
 begin
   fonction_des_boutons (1);
 end;
 
-
 procedure TForm3.Button3Click(Sender: TObject);
-
 begin
  fonction_des_boutons (2);
 end;
 
-
 procedure TForm3.Button4Click(Sender: TObject);
-
 begin
  fonction_des_boutons (3);
 end;
 
-
-
 procedure TForm3.Button5Click(Sender: TObject);
-
 begin
   fonction_des_boutons (4);
 end;
 
-
-
 procedure TForm3.Button6Click(Sender: TObject);
-
 begin
   fonction_des_boutons (5);
 end;
 
 procedure TForm3.Button7Click(Sender: TObject);
-
 begin
   fonction_des_boutons (6);
 end;

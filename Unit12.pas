@@ -5,7 +5,8 @@ interface
 uses
    System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects,Unit3,Unit1, FMX.Edit;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects,Unit3,Unit1,FMX.Layouts,
+   FMX.Edit;
 
 type
   TForm12 = class(TForm)
@@ -39,9 +40,12 @@ implementation
 
 
 procedure TForm12.playClick(Sender: TObject);
+
 begin
   initialiser(form3.FlowLayout1);
   form3.Show;
 end;
+
+ 
 
 end.

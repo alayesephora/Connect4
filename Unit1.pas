@@ -2,62 +2,41 @@ unit Unit1;
 
 interface
 
-
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
   FMX.Grid.Style, FMX.Grid, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Menus,
   FMX.StdCtrls, FMX.Objects, FMX.Edit, FMX.Layouts;
 
+
+
+
   procedure horizontal_win(i,j: integer);
   procedure vertical_win(i,j: integer);
   procedure diagonal_win_gauche(i,j: integer);
   procedure diagonal_win_droite(i,j: integer);
   procedure win;
-  procedure calcul_intermediaire (i: integer;var LColumn: Array of TControl);
-  procedure initialiser(LFlowLayout1: TFlowLayout) ;
-  procedure bouton_cliker ( var LColumn: Array  of TControl);
-  procedure bouton (a : integer ; var LColumn: Array  of TControl;LFlowLayout1: TFlowLayout);
-
+  procedure calcul_intermediaire (j,i: integer);
+  procedure bouton_cliker (j: integer);
+   procedure initialiser(LFlowLayout1: TFlowLayout);
  Var
     clicked,winner,isclicked: boolean;
     compteur  : integer;
-    tab : Array [0..6] of Array [0..6] of  TControl;
+    Ltableau : Array [0..6] of Array [0..6] of  TControl;
 
 implementation
 
 
-
-
-procedure initialiser(LFlowLayout1: TFlowLayout) ;
-
-var
-  i,j : integer;
-begin
-  for i := 0 to 6 do
-    begin
-       for j := 0 to 6 do
-         tab[i][j] := LFlowLayout1.Controls[7*i+j];
-    end;
-
-  winner := False;
-  clicked := False;
-  isclicked := False;
-  compteur := 0;
-
-
-end;
-
 procedure diagonal_win_gauche(i,j: integer);
 begin
-   if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+1][j+1]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+2][j+2]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+3][j+3]).Fill.Color=TAlphacolorrec.green))or
-            ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+1][j+1]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+2][j+2]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+3][j+3]).Fill.Color=TAlphacolorrec.blue)) then
+   if ((Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+1][j+1]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+2][j+2]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+3][j+3]).Fill.Color=TAlphacolorrec.green))or
+            ((Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+1][j+1]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+2][j+2]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+3][j+3]).Fill.Color=TAlphacolorrec.blue)) then
 
                 begin
                     winner := True;
@@ -66,14 +45,14 @@ end;
 
 procedure diagonal_win_droite(i,j: integer);
 begin
-   if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+1][j-1]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+2][j-2]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+3][j-3]).Fill.Color=TAlphacolorrec.green))or
-            ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+1][j-1]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+2][j-2]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+3][j-3]).Fill.Color=TAlphacolorrec.blue)) then
+   if ((Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+1][j-1]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+2][j-2]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+3][j-3]).Fill.Color=TAlphacolorrec.green))or
+            ((Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+1][j-1]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+2][j-2]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+3][j-3]).Fill.Color=TAlphacolorrec.blue)) then
 
                 begin
                     winner := True;
@@ -81,14 +60,14 @@ begin
 end;
 procedure vertical_win(i,j: integer);
 begin
-   if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+1][j]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+2][j]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i+3][j]).Fill.Color=TAlphacolorrec.green))or
-           ( (Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+1][j]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+2][j]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i+3][j]).Fill.Color=TAlphacolorrec.blue)) then
+   if ((Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+1][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+2][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i+3][j]).Fill.Color=TAlphacolorrec.green))or
+           ( (Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+1][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+2][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i+3][j]).Fill.Color=TAlphacolorrec.blue)) then
 
                 begin
                     winner := True;
@@ -97,94 +76,81 @@ end;
 procedure horizontal_win(i,j: integer);
 
 begin
-  if ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i][j+1]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i][j+2]).Fill.Color=TAlphacolorrec.green) and
-            (Trectangle(tab[i][j+3]).Fill.Color=TAlphacolorrec.green) ) or
-            ((Trectangle(tab[i][j]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i][j+1]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i][j+2]).Fill.Color=TAlphacolorrec.blue) and
-            (Trectangle(tab[i][j+3]).Fill.Color=TAlphacolorrec.blue) )then
+  if ((Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i][j+1]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i][j+2]).Fill.Color=TAlphacolorrec.green) and
+            (Trectangle(Ltableau[i][j+3]).Fill.Color=TAlphacolorrec.green) ) or
+            ((Trectangle(Ltableau[i][j]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i][j+1]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i][j+2]).Fill.Color=TAlphacolorrec.blue) and
+            (Trectangle(Ltableau[i][j+3]).Fill.Color=TAlphacolorrec.blue) )then
 
       begin
        winner := True;
-                end
+       end
 end;
 
 procedure win;
  var
 i,j: integer;
 begin
-
   for i := 0 to 6 do
     begin
       for j := 0 to 3 do
          begin
            horizontal_win(i,j);
+           vertical_win(j,i);
            if winner = True then
               break;
          end;
         if winner = True then
           break;
     end;
-
-
-
-    for i := 0 to 3 do
-    begin
-      for j := 0 to 6 do
-         begin
-           vertical_win(i,j);
-           if winner = True then
-              break;
-         end;
-         if winner = True then
-          break;
-    end;
-
     for i := 0 to 3 do
       begin
         for j := 0 to 3 do
           begin
             diagonal_win_gauche(i,j);
+            diagonal_win_droite(i,j+3);
             if winner = True then
               break;
           end;
           if winner = True then
               break;
-
       end;
-
-
-     for i := 0 to 3 do
-      begin
-        for j := 3 to 6 do
-          begin
-            diagonal_win_droite(i,j);
-            if winner = True then
-              break;
-          end;
-          if winner = True then
-              break;
-
-      end;
-
 
 end;
-procedure calcul_intermediaire (i: integer;var LColumn: Array of TControl);
+
+ procedure initialiser(LFlowLayout1: TFlowLayout);
+ begin
+    var
+  i,j : integer;
+ begin
+     for i := 0 to 6 do
+    begin
+       for j := 0 to 6 do
+        Ltableau[i][j] := LFlowLayout1.Controls[7*i+j];
+    end;
+  winner := False;
+  clicked := False;
+  isclicked := False;
+  compteur := 0;
+ end;
+ end;
+procedure calcul_intermediaire (j,i: integer);
 begin
      if clicked = False  then
           begin
-            win;
-            Trectangle(LColumn[i]).Fill.color := TAlphacolorrec.blue;
-            clicked := True ;
+           win;
+           Trectangle(Ltableau[i][j]).Fill.color := TAlphacolorrec.blue;
+           clicked := True ;
            compteur := compteur +1;
            win;
           end
        else
           begin
            win;
-           Trectangle(LColumn[i]).Fill.color := TAlphacolorrec.green;
+           Trectangle(Ltableau[i][j]).Fill.color := TAlphacolorrec.green;
            clicked := False;
            compteur := compteur +1;
            win;
@@ -192,41 +158,42 @@ begin
 end;
 
 
-procedure bouton_cliker ( var LColumn: Array of TControl);
+ procedure bouton_cliker (j: integer);
 begin
-  if  (Trectangle(LColumn[6]).Fill.color <>  TAlphacolorrec.blue)
-    and (Trectangle(LColumn[6]).Fill.color <>  TAlphacolorrec.green)  then
-       calcul_intermediaire (6,LColumn)
+  if  (Trectangle(Ltableau[6,j]).Fill.color <>  TAlphacolorrec.blue)
+    and (Trectangle(Ltableau[6,j]).Fill.color <>  TAlphacolorrec.green)  then
+       calcul_intermediaire (j,6)
+
   else
   begin
-     if  (Trectangle(LColumn[5]).Fill.color <>  TAlphacolorrec.blue)
-        and (Trectangle(LColumn[5]).Fill.color <>  TAlphacolorrec.green)  then
-           calcul_intermediaire (5,LColumn)
+     if  (Trectangle(Ltableau[5,j]).Fill.color <>  TAlphacolorrec.blue)
+        and (Trectangle(Ltableau[5,j]).Fill.color <>  TAlphacolorrec.green)  then
+           calcul_intermediaire (j,5)
      else
       begin
-        if  (Trectangle(LColumn[4]).Fill.color <>  TAlphacolorrec.blue)
-          and (Trectangle(LColumn[4]).Fill.color <>  TAlphacolorrec.green)  then
-           calcul_intermediaire (4,LColumn)
+        if  (Trectangle(Ltableau[4,j]).Fill.color <>  TAlphacolorrec.blue)
+            and (Trectangle(Ltableau[4,j]).Fill.color <>  TAlphacolorrec.green)  then
+                  calcul_intermediaire (j,4)
         else
           begin
-            if  (Trectangle(LColumn[3]).Fill.color <>  TAlphacolorrec.blue)
-                and (Trectangle(LColumn[3]).Fill.color <>  TAlphacolorrec.green)  then
-                 calcul_intermediaire (3,LColumn)
+          if  (Trectangle(Ltableau[3,j]).Fill.color <>  TAlphacolorrec.blue)
+                 and (Trectangle(Ltableau[3,j]).Fill.color <>  TAlphacolorrec.green)  then
+                      calcul_intermediaire (j,3)
              else
                 begin
-                   if  (Trectangle(LColumn[2]).Fill.color <>  TAlphacolorrec.blue)
-                        and (Trectangle(LColumn[2]).Fill.color <>  TAlphacolorrec.green)  then
-                          calcul_intermediaire (2,LColumn)
+                  if  (Trectangle(Ltableau[2,j]).Fill.color <>  TAlphacolorrec.blue)
+                          and (Trectangle(Ltableau[2,j]).Fill.color <>  TAlphacolorrec.green)  then
+                               calcul_intermediaire (j,2)
                     else
                       begin
-                       if  (Trectangle(LColumn[1]).Fill.color <>  TAlphacolorrec.blue)
-                          and (Trectangle(LColumn[1]).Fill.color <>  TAlphacolorrec.green)  then
-                           calcul_intermediaire (1,LColumn)
+                       if  (Trectangle(Ltableau[1,j]).Fill.color <>  TAlphacolorrec.blue)
+                              and (Trectangle(Ltableau[1,j]).Fill.color <>  TAlphacolorrec.green)  then
+                                   calcul_intermediaire (j,1)
                         else
                           begin
-                             if  (Trectangle(LColumn[0]).Fill.color <>  TAlphacolorrec.blue)
-                              and (Trectangle(LColumn[0]).Fill.color <>  TAlphacolorrec.green)  then
-                               calcul_intermediaire (0,LColumn)
+                           if  (Trectangle(Ltableau[0,j]).Fill.color <>  TAlphacolorrec.blue)
+                                  and (Trectangle(Ltableau[0,j]).Fill.color <>  TAlphacolorrec.green)  then
+                                      calcul_intermediaire (j,0)
                           end;
 
                       end;
@@ -237,26 +204,6 @@ begin
   end;
 
  end;
-
-
-
-
-
-procedure bouton (a : integer ; var LColumn: Array  of TControl;LFlowLayout1: TFlowLayout);
-
-var
-  i: integer;
-begin
-    for i := 0 to 6 do
-      begin
-        if i=0 then
-           LColumn[i] := LFlowLayout1.Controls[i+a]
-        else
-           LColumn[i] := LFlowLayout1.Controls[7*(i+a)-6*a];
-      end;
-    bouton_cliker (LColumn) ;
-
-end;
 
 
 end.
